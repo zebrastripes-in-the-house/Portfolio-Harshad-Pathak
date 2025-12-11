@@ -1,16 +1,31 @@
-# React + Vite
+# Harshad Pathak - Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my personal portfolio website. This project showcases my work as a Designer and Developer through an interactive, responsive Bento Grid layout.
 
-Currently, two official plugins are available:
+## About Me
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+I specialize in UI/UX, Graphic and Brand Design, with growing interest in Full-Stack Development. Based in Gandhinagar, Gujarat, India. I am a Sophomore pursuing B.tech (Computer Science Engineering) at IIIT Vadodara (Gandhinagar Campus).
 
-## React Compiler
+I focus on clean visuals, cohesive systems, and interfaces built on clarity. My process is driven by a clear structure and a steady attention to how people think and move through an experience.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+-   **Instagram**: [@theharshadpathak](https://www.instagram.com/theharshadpathak/?hl=en)
+-   **Behance**: [Harshad Pathak](https://www.behance.net/harshadpathak)
+-   **GitHub**: [zebrastripes-in-the-house](https://github.com/zebrastripes-in-the-house)
+-   **LinkedIn**: [Harshad Pathak](https://www.linkedin.com/in/h-pathak/)
+-   **Resume**: [View Resume](https://drive.google.com/file/d/1LhDg7yn2YDm3cDMK6GX1zDS5EotJXj4O/view?usp=sharing)
 
-## Expanding the ESLint configuration
+## About The Project
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+This portfolio is built with **React** and **Vite**, featuring a custom masonry-style "Bento Grid" layout.
+
+### Features
+-   **Responsive Design**: Adapts seamlessly to different screen sizes, switching to a 2-column layout on mobile.
+-   **Interactive Elements**: Smooth hover effects and lift animations on grid items.
+-   **Optimized Performance**: Image preloading system with a custom loading screen.
+
+## Tech Stack
+
+-   [React](https://reactjs.org/)
+-   [Vite](https://vitejs.dev/)
+-   CSS3
+
