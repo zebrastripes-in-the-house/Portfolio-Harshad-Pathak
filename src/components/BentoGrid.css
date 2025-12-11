@@ -1,0 +1,121 @@
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Mobile: 2 columns */
+  gap: var(--gap);
+  width: 100%;
+  max-width: 1400px; /* Increased max-width for more items */
+  margin: 0 auto;
+  grid-auto-flow: dense; /* Helps pack random sizes */
+  grid-auto-rows: var(--bento-row-height, auto); /* Fallback to auto if var not set */
+  box-sizing: border-box;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: var(--bento-row-height, 200px);
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .bento-grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: var(--bento-row-height, 250px); /* Use dynamic height, fallback to 250px */
+  }
+}
+
+/* Span Utilities - Global */
+.col-span-1 { grid-column: span 1; }
+.col-span-2 { grid-column: span 2; }
+/* On mobile (2 cols), span 3 and 4 should just span 2 (full width) */
+.col-span-3 { grid-column: span 2; } 
+.col-span-4 { grid-column: span 2; }
+
+.row-span-1 { grid-row: span 1; }
+.row-span-2 { grid-row: span 2; }
+.row-span-3 { grid-row: span 3; }
+
+/* Desktop Overrides for larger spans */
+@media (min-width: 1024px) {
+  .col-span-3 { grid-column: span 3; }
+  .col-span-4 { grid-column: span 4; }
+}
+
+.bento-item {
+  background-color: var(--bg-secondary);
+  border-radius: var(--border-radius);
+  /* padding: var(--padding);  Removed padding for full-bleed images */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+  border: none; /* Ensure no border */
+  position: relative;
+  
+  /* Staggered Entrance Animation */
+  opacity: 0;
+  animation: fadeInUp 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Stagger Delays for up to 30 items */
+.bento-item:nth-child(1) { animation-delay: 0.05s; }
+.bento-item:nth-child(2) { animation-delay: 0.1s; }
+.bento-item:nth-child(3) { animation-delay: 0.15s; }
+.bento-item:nth-child(4) { animation-delay: 0.2s; }
+.bento-item:nth-child(5) { animation-delay: 0.25s; }
+.bento-item:nth-child(6) { animation-delay: 0.3s; }
+.bento-item:nth-child(7) { animation-delay: 0.35s; }
+.bento-item:nth-child(8) { animation-delay: 0.4s; }
+.bento-item:nth-child(9) { animation-delay: 0.45s; }
+.bento-item:nth-child(10) { animation-delay: 0.5s; }
+.bento-item:nth-child(11) { animation-delay: 0.55s; }
+.bento-item:nth-child(12) { animation-delay: 0.6s; }
+.bento-item:nth-child(13) { animation-delay: 0.65s; }
+.bento-item:nth-child(14) { animation-delay: 0.7s; }
+.bento-item:nth-child(15) { animation-delay: 0.75s; }
+.bento-item:nth-child(16) { animation-delay: 0.8s; }
+.bento-item:nth-child(17) { animation-delay: 0.85s; }
+.bento-item:nth-child(18) { animation-delay: 0.9s; }
+.bento-item:nth-child(19) { animation-delay: 0.95s; }
+.bento-item:nth-child(20) { animation-delay: 1.0s; }
+.bento-item:nth-child(21) { animation-delay: 1.05s; }
+.bento-item:nth-child(22) { animation-delay: 1.1s; }
+.bento-item:nth-child(23) { animation-delay: 1.15s; }
+.bento-item:nth-child(24) { animation-delay: 1.2s; }
+.bento-item:nth-child(25) { animation-delay: 1.25s; }
+.bento-item:nth-child(26) { animation-delay: 1.3s; }
+.bento-item:nth-child(27) { animation-delay: 1.35s; }
+.bento-item:nth-child(28) { animation-delay: 1.4s; }
+.bento-item:nth-child(29) { animation-delay: 1.45s; }
+.bento-item:nth-child(30) { animation-delay: 1.5s; }
+
+.bento-item:hover {
+  transform: translateY(-8px); /* Slight lift */
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5); /* Shadow on hover */
+  z-index: 1;
+}
+
+.bento-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.bento-item:hover img {
+  transform: scale(1.05); /* Subtle zoom on image */
+}
