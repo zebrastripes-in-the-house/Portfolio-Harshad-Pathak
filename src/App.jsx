@@ -3,6 +3,7 @@ import BentoGrid from './components/BentoGrid';
 import BentoItem from './components/BentoItem';
 import Loader from './components/Loader';
 import Favicon from 'react-favicon';
+import { Analytics } from "@vercel/analytics/next";
 import './App.css';
 
 // Import images
