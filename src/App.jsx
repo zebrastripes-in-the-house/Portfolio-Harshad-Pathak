@@ -3,7 +3,7 @@ import BentoGrid from './components/BentoGrid';
 import BentoItem from './components/BentoItem';
 import Loader from './components/Loader';
 import Favicon from 'react-favicon';
-import { Analytics } from "@vercel/analytics/next";
+import { Analytics } from "@vercel/analytics/react";
 import './App.css';
 
 // Import images
@@ -71,6 +71,7 @@ function App() {
   return (
     <div className="app-container">
       <Favicon url={favSvg} />
+      <Analytics />
       <BentoGrid>
         {/* 
           Bento Grid Items 
