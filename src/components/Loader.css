@@ -7,10 +7,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("../assets/background.png"); /* Match main site background */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: transparent; /* Show LiquidEther background */
   z-index: 9999;
 }
 

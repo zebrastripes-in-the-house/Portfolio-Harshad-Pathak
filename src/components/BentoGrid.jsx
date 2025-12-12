@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import GlobalSpotlight from './GlobalSpotlight';
 import './BentoGrid.css';
 
 const BentoGrid = ({ children }) => {
@@ -34,9 +35,12 @@ const BentoGrid = ({ children }) => {
   }, []);
 
   return (
-    <div className="bento-grid" ref={gridRef}>
-      {children}
-    </div>
+    <>
+      <GlobalSpotlight gridRef={gridRef} />
+      <div className="bento-grid bento-section" ref={gridRef}>
+        {children}
+      </div>
+    </>
   );
 };
 

@@ -1,3 +1,8 @@
+:root {
+  --glow-red: 255, 0, 0; /* RED */
+  --glow-radius: 200px;
+}
+
 .bento-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Mobile: 2 columns */
@@ -50,14 +55,100 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
-  border: none; /* Ensure no border */
+  /* Removed manual transition/box-shadow as gsap handles it mostly, but let's keep base styles */
+  border: 1px solid rgba(255, 255, 255, 0.1); 
+  /* border-radius: var(--border-radius); already there */
   position: relative;
   
-  /* Staggered Entrance Animation */
+  /* Staggered Entrance Animation - keep existing */
   opacity: 0;
   animation: fadeInUp 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+
+  /* Magic vars */
+  --glow-x: 50%;
+  --glow-y: 50%;
+  --glow-intensity: 0;
+  --glow-radius: 200px;
 }
+
+/* Border glow effect from MagicBento */
+.magic-bento-card--border-glow::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 2px; /* Thinner border for cleaner look */
+  background: radial-gradient(
+    var(--glow-radius) circle at var(--glow-x) var(--glow-y),
+    rgba(var(--glow-red), calc(var(--glow-intensity) * 1)) 0%,
+    rgba(var(--glow-red), calc(var(--glow-intensity) * 0.6)) 30%,
+    transparent 70%
+  );
+  border-radius: inherit;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  z-index: 10; /* Above image? */
+}
+
+/* Ensure image doesn't block the border glow if z-index issues arise */
+.bento-item img {
+  z-index: 1; 
+  position: relative;
+}
+
+.magic-bento-card--border-glow:hover::after {
+  opacity: 1;
+}
+
+/* Remove old hover effects if conflicting with GSAP? GSAP handles tilt. 
+   We keep box-shadow for simple fallback or enhance it. */
+.bento-item:hover {
+  /* transform: translateY(-8px);  Disable CSS transform as GSAP handles it */
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.5),
+    0 0 30px rgba(var(--glow-red), 0.2) !important; /* Red Glow on hover */
+  z-index: 20;
+}
+
+.particle-container {
+  position: relative;
+  overflow: hidden; /* Ensure images are contained */
+}
+
+.particle::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: rgba(var(--glow-red), 0.2);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+/* Global spotlight styles */
+.global-spotlight {
+  mix-blend-mode: screen;
+  will-change: transform, opacity;
+  z-index: 200 !important;
+  pointer-events: none;
+}
+
+.bento-section {
+  position: relative;
+  user-select: none;
+}
+
+
 
 @keyframes fadeInUp {
   from {
@@ -102,11 +193,11 @@
 .bento-item:nth-child(29) { animation-delay: 1.45s; }
 .bento-item:nth-child(30) { animation-delay: 1.5s; }
 
-.bento-item:hover {
-  transform: translateY(-8px); /* Slight lift */
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5); /* Shadow on hover */
+/* .bento-item:hover {
+  transform: translateY(-8px); 
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
   z-index: 1;
-}
+} */
 
 .bento-item img {
   width: 100%;

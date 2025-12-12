@@ -1,5 +1,7 @@
 :root {
   /* Color Palette */
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:opsz,wght@9..40,100..1000&display=swap');
+
   --bg-primary: #121212; /* Deep Grey/Black for main background */
   --bg-secondary: #1E1E1E; /* Lighter Grey for bento boxes */
   --bg-tertiary: #2A2A2A; /* Even lighter for hover/active states */
@@ -12,8 +14,9 @@
   --gap: 16px;
   --padding: 24px;
 
-  /* Typography */
-  --font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font-family: 'DM Sans', 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font-heading: 'DM Mono', 'Inter', monospace;
+
   
   font-family: var(--font-family);
   line-height: 1.5;
@@ -35,12 +38,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background-color: var(--bg-primary);
-  background-image: url('./assets/background.png');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+  background-color: #111111; /* Match LiquidEther dark theme */
   color: var(--text-primary);
   overflow-x: hidden; /* Prevent horizontal scroll */
   width: 100%;
