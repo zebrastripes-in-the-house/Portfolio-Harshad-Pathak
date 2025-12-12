@@ -32,6 +32,9 @@ import img22 from './assets/22.png';
 import img23 from './assets/23.png';
 import img24 from './assets/24.png';
 import img25 from './assets/25.png';
+import img26 from './assets/26.png';
+import img27 from './assets/27.png';
+import img28 from './assets/28.png';
 import favSvg from './assets/fav.svg';
 
 function App() {
@@ -43,7 +46,9 @@ function App() {
       img06, img07, img08, img09, img10, 
       img11, img12, img13, img14, img15, 
       img16, img17, img18, img19, img20, 
-      img21, img22, img23, img24, img25
+      img16, img17, img18, img19, img20, 
+      img21, img22, img23, img24, img25,
+      img26, img27, img28
     ];
 
     const preloadImages = async () => {
@@ -90,17 +95,30 @@ function App() {
         <BentoItem 
           colSpan={1} 
           rowSpan={1} 
-          src={img02} 
-          alt="Image 02" 
-          href="https://www.instagram.com/theharshadpathak/?hl=en"
-        />
+          className="social-container"
+        >
+          <div className="social-grid">
+             <a href="https://www.instagram.com/theharshadpathak/?hl=en" className="social-item" target="_blank" rel="noopener noreferrer">
+                <img src={img02} alt="Instagram" />
+             </a>
+             <a href="https://www.behance.net/harshadpathak" className="social-item" target="_blank" rel="noopener noreferrer">
+                <img src={img03} alt="Behance" />
+             </a>
+             <a href="https://github.com/zebrastripes-in-the-house" className="social-item" target="_blank" rel="noopener noreferrer">
+                <img src={img06} alt="GitHub" />
+             </a>
+             <a href="https://www.linkedin.com/in/h-pathak/" className="social-item" target="_blank" rel="noopener noreferrer">
+                <img src={img07} alt="LinkedIn" />
+             </a>
+          </div>
+        </BentoItem>
         {/* 03 */}
         <BentoItem 
           colSpan={1} 
           rowSpan={1} 
-          src={img03} 
-          alt="Image 03" 
-          href="https://www.behance.net/harshadpathak"
+          src={img28 } 
+          alt="Image 28" 
+          href="#"
         />
         
         {/* 04: Feature Work (Wide) */}
@@ -120,15 +138,15 @@ function App() {
         />
         
         {/* 06 */}
-        <BentoItem colSpan={1} rowSpan={1} src={img06} alt="Image 06" href="https://github.com/zebrastripes-in-the-house" />
+        <BentoItem colSpan={1} rowSpan={1} src={img26} alt="Image 26"/>
         {/* 07 */}
-        <BentoItem colSpan={1} rowSpan={1} src={img07} alt="Image 07" href="https://www.linkedin.com/in/h-pathak/" />
+        <BentoItem colSpan={1} rowSpan={1} src={img10} alt="Image 10" href = "https://drive.google.com/file/d/1LhDg7yn2YDm3cDMK6GX1zDS5EotJXj4O/view?usp=sharing" />
         {/* 08 */}
         <BentoItem colSpan={2} rowSpan={2} src={img08} alt="Image 08" />
         {/* 09 */}
         <BentoItem colSpan={1} rowSpan={1} src={img09} alt="Image 09" />
         {/* 10 */}
-        <BentoItem colSpan={1} rowSpan={1} src={img10} alt="Image 10" href="https://drive.google.com/file/d/1LhDg7yn2YDm3cDMK6GX1zDS5EotJXj4O/view?usp=sharing" />
+        <BentoItem colSpan={1} rowSpan={1} src={img27} alt="Image 27"/>   
         {/* 11 */}
         <BentoItem colSpan={2} rowSpan={1} src={img11} alt="Image 11" />
         {/* 12 */}
@@ -159,6 +177,12 @@ function App() {
         <BentoItem colSpan={1} rowSpan={1} src={img24} alt="Image 24" />
         {/* 25 */}
         <BentoItem colSpan={1} rowSpan={1} src={img25} alt="Image 25" />
+        {/* 26 */}
+        <BentoItem colSpan={1} rowSpan={1} src={img26} alt="Image 26" />
+        {/* 27 */}
+        <BentoItem colSpan={1} rowSpan={1} src={img27} alt="Image 27" />
+        {/* 28 */}
+        <BentoItem colSpan={1} rowSpan={1} src={img28} alt="Image 28" />
 
       </BentoGrid>
     </div>
